@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DragonBall</string>
+    <string name="dragon_ball_app">Dragon Ball app</string>
+    <string name="insert_user">Introduce tu usuario</string>
+    <string name="insert_password">Introduce tu contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="heal">Curar</string>
+    <string name="damage">Atacar</string>
+</resources>

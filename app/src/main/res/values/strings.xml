@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DragonBall</string>
+    <string name="dragon_ball_app">Dragon Ball App</string>
+    <string name="insert_user">Insert your user name</string>
+    <string name="insert_password">Insert your password</string>
+    <string name="login">Login</string>
+    <string name="heal">Heal</string>
+    <string name="damage">Damage</string>
+</resources>
