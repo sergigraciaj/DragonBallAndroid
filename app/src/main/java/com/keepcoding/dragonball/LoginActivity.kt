@@ -17,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setObservers()
         viewModel.saveUser(
