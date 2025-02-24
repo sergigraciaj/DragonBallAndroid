@@ -11,6 +11,8 @@ import kotlinx.coroutines.launch
 
 class GameViewModel: ViewModel() {
 
+    private var token: String? = null
+
     sealed class State {
         data object Loading: State()
         data class Success(val characters: List<Character>): State()
@@ -18,10 +20,12 @@ class GameViewModel: ViewModel() {
 
     }
 
-
     private val _uiState = MutableStateFlow<State>(State.Loading)
     val uiState: StateFlow<State> = _uiState.asStateFlow()
 
+    fun updateToken(token: String?) {
+        this.token = token
+    }
 
     fun downloadCharacters() {
         viewModelScope.launch {

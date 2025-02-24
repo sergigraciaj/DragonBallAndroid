@@ -42,9 +42,9 @@ class LoginActivity : AppCompatActivity() {
                         binding.pbLoading.visibility = View.VISIBLE
                     }
                     is LoginViewModel.State.Success -> {
-                        // TODO ir a la siguiente pantalla
                         binding.pbLoading.visibility = View.INVISIBLE
                         Toast.makeText(this@LoginActivity, "El token es. ${state.token}", Toast.LENGTH_LONG).show()
+                        startGameActivity(state.token)
                     }
                     is LoginViewModel.State.Error -> {
                         binding.pbLoading.visibility = View.INVISIBLE
@@ -55,4 +55,9 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun startGameActivity(token: String) {
+        GameActivity.startGameActivity(this, token)
+    }
+
 }

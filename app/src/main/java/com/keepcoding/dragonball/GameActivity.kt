@@ -1,5 +1,7 @@
 package com.keepcoding.dragonball
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -13,6 +15,14 @@ import kotlinx.coroutines.launch
 
 class GameActivity : AppCompatActivity() {
 
+    companion object {
+        private var TAG_TOKEN = "Token"
+        fun startGameActivity(context: Context, token: String) {
+            val intent = Intent(context, GameActivity::class.java)
+            intent.putExtra(TAG_TOKEN, token)
+            context.startActivity(intent)
+        }
+    }
 
     private val viewModel: GameViewModel by viewModels()
     private lateinit var binding: ActivityGameBinding
@@ -27,6 +37,15 @@ class GameActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val token = intent.getStringExtra("token")
+        token?.let {
+            viewModel.updateToken(token)
+        } ?: run {
+            Toast.makeText(this, "No hay token. La activity se va a cerrar", Toast.LENGTH_LONG).show()
+            finish()
+        }
+        viewModel.updateToken(token)
         initViews()
         setObservers()
 
