@@ -1,4 +1,4 @@
-package com.keepcoding.dragonball
+package com.keepcoding.dragonball.login
 
 import android.os.Bundle
 import android.view.View
@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.keepcoding.dragonball.GameActivity
 import com.keepcoding.dragonball.databinding.ActivityLoginBinding
 import kotlinx.coroutines.launch
 
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         setObservers()
         viewModel.saveUser(
             preferences = getSharedPreferences("LoginPreferences", MODE_PRIVATE),
-            user = "pepe",
+            user = "test",
             password = "1234"
         )
 
@@ -59,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun startGameActivity(token: String) {
         GameActivity.startGameActivity(this, token)
+        finish()
     }
 
 }
