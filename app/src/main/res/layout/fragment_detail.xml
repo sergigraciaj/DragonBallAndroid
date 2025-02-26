@@ -8,46 +8,59 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Nombre del pj"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="36sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginStart="50dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ProgressBar
+        android:id="@+id/pbLife"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/blue"
+        android:progressBackgroundTint="@color/black"
+        tools:progress="50"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton"
-        android:layout_width="150dp"
+        android:id="@+id/bDamage"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="50dp"
         android:background="@color/blue"
         android:text="@string/damage"
-        android:layout_marginStart="50dp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="150dp"
+        android:id="@+id/bHeal"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-
+        android:layout_marginBottom="50dp"
         android:background="@color/blue"
         android:text="@string/heal"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/appCompatButton" />
+        android:layout_marginEnd="80dp"
+        app:layout_constraintStart_toEndOf="@+id/bDamage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

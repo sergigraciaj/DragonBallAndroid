@@ -7,7 +7,6 @@ class UserRepository {
 
     companion object {
         private var token = ""
-
     }
 
     sealed class LoginResponse {

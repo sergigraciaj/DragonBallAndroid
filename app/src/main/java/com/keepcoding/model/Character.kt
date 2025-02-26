@@ -1,4 +1,4 @@
 package com.keepcoding.model
 
-class Character(val id: String, val name: String, val imageUrl: String, totalLife: Int, currentLife: Int = 100)
+class Character(val id: String, val name: String, val imageUrl: String, val totalLife: Int, var currentLife: Int = 100, var timesSelected: Int = 0)
 

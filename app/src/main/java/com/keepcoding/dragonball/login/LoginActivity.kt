@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.keepcoding.dragonball.GameActivity
+import com.keepcoding.dragonball.game.GameActivity
 import com.keepcoding.dragonball.databinding.ActivityLoginBinding
 import kotlinx.coroutines.launch
 
@@ -45,12 +45,11 @@ class LoginActivity : AppCompatActivity() {
                     }
                     is LoginViewModel.State.Success -> {
                         binding.pbLoading.visibility = View.INVISIBLE
-                        Toast.makeText(this@LoginActivity, "El token es. ${state.token}", Toast.LENGTH_LONG).show()
-                        startGameActivity(state.token)
+                        startGameActivity()
                     }
                     is LoginViewModel.State.Error -> {
                         binding.pbLoading.visibility = View.INVISIBLE
-                        Toast.makeText(this@LoginActivity, "Ha ocurrido un error. ${state.message} ${state.errorCode}", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@LoginActivity, "Error: ${state.message} ${state.errorCode}", Toast.LENGTH_LONG).show()
                     }
                 }
 
@@ -58,8 +57,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun startGameActivity(token: String) {
-        GameActivity.startGameActivity(this, token)
+    private fun startGameActivity() {
+        GameActivity.startGameActivity(this)
         finish()
     }
 
