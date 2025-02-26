@@ -7,10 +7,10 @@
     android:background="@color/orange">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivPhoto"
         android:layout_width="300dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,23 +27,26 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/ivPhoto" />
 
     <ProgressBar
         android:id="@+id/pbLife"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:progressTint="@color/blue"
-        android:progressBackgroundTint="@color/black"
+        android:progressTint="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/bDamage"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        tools:layout_editor_absoluteX="-16dp"
         tools:progress="50"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+        android:layout_marginHorizontal="50dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bDamage"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="300dp"
         android:background="@color/blue"
         android:text="@string/damage"
         android:textColor="@color/white"
@@ -54,7 +57,7 @@
         android:id="@+id/bHeal"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="300dp"
         android:background="@color/blue"
         android:text="@string/heal"
         android:textColor="@color/white"

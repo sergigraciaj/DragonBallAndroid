@@ -23,6 +23,7 @@
         android:layout_height="match_parent"
         tools:itemCount="10"
         tools:listitem="@layout/character_item"
+        
         />
 
 </LinearLayout>

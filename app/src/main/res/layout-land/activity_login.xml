@@ -14,8 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@mipmap/logo"
-        android:layout_marginVertical="40dp"
+        android:layout_marginVertical="30dp"
         android:padding="20dp"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,13 +57,6 @@
                 android:padding="10dp"/>
 
         </LinearLayout>
-
-        <ProgressBar
-            android:id="@+id/pbLoading"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bLogin"

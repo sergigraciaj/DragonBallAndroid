@@ -32,6 +32,7 @@ class CharacterAdapter(
                 .centerInside()
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(binding.ivPhoto)
+            binding.tvLife.text = "${character.currentLife} / ${character.totalLife}"
             binding.root.setOnClickListener {
                 onCharacterClicked(character)
             }

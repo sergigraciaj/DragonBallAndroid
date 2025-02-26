@@ -7,6 +7,7 @@
     android:padding="16dp"
     android:orientation="horizontal"
     android:gravity="center_vertical"
+    android:background="@color/orange"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
@@ -20,12 +21,13 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Hello World!"
+        android:textColor="@color/blue"
         android:textSize="18sp"
-      />
+        android:textStyle="bold"
+        tools:text="Hello World!" />
 
     <TextView
-        android:id="@+id/tv_life"
+        android:id="@+id/tvLife"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="50/100"

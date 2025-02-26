@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import com.keepcoding.dragonball.R
 import com.keepcoding.dragonball.databinding.FragmentDetailBinding
 import com.keepcoding.dragonball.game.GameViewModel
 import com.keepcoding.model.Character
@@ -31,6 +33,12 @@ class DetailFragment: Fragment() {
 
     private fun initViews(character: Character) {
         with(binding) {
+            Glide
+                .with(binding.root)
+                .load(character.imageUrl)
+                .centerInside()
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .into(binding.ivPhoto)
             tvName.text = character.name
             pbLife.progress = character.currentLife
             bDamage.setOnClickListener {

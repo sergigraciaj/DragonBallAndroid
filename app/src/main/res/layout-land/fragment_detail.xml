@@ -7,7 +7,7 @@
     android:background="@color/orange">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivPhoto"
         android:layout_width="200dp"
         android:layout_height="300dp"
         android:layout_marginStart="50dp"
@@ -25,17 +25,19 @@
         android:textSize="36sp"
         android:textStyle="bold"
         android:layout_marginStart="50dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintStart_toEndOf="@+id/ivPhoto"
+        app:layout_constraintTop_toTopOf="@+id/ivPhoto" />
 
     <ProgressBar
         android:id="@+id/pbLife"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progressTint="@color/blue"
-        android:progressBackgroundTint="@color/black"
-        tools:progress="50"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:progressTint="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/bDamage"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        tools:progress="50" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bDamage"
@@ -45,8 +47,8 @@
         android:text="@string/damage"
         android:layout_marginStart="50dp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/ivPhoto"
+        app:layout_constraintStart_toEndOf="@+id/ivPhoto" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bHeal"
@@ -55,7 +57,7 @@
         android:background="@color/blue"
         android:text="@string/heal"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/bDamage" />
 
