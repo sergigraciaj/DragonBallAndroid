@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@mipmap/logo"
-        android:layout_marginVertical="30dp"
+        android:layout_marginVertical="15dp"
         android:padding="20dp"/>
 
     <ProgressBar

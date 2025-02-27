@@ -56,6 +56,10 @@ class DetailFragment: Fragment() {
                 character.currentLife = character.totalLife
                 pbLife.progress = character.currentLife
             }
+
+            bTimesSelected.setOnClickListener {
+                Toast.makeText(binding.root.context, "Selected ${character.timesSelected} times", Toast.LENGTH_LONG).show()
+            }
         }
     }
 

@@ -7,4 +7,5 @@
     <string name="login">Iniciar sesión</string>
     <string name="heal">Curar</string>
     <string name="damage">Atacar</string>
+    <string name="times_selected">Veces seleccionado</string>
 </resources>

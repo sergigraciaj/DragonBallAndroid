@@ -6,4 +6,5 @@
     <string name="login">Login</string>
     <string name="heal">Heal</string>
     <string name="damage">Damage</string>
+    <string name="times_selected">Times selected</string>
 </resources>
