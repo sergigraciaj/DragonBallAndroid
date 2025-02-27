@@ -1,9 +1,11 @@
 package com.keepcoding.dragonball.game.detail
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -44,6 +46,11 @@ class DetailFragment: Fragment() {
             bDamage.setOnClickListener {
                 viewModel.damageCharacter(character)
                 pbLife.progress = character.currentLife
+
+                if(character.isDead()) {
+                    Toast.makeText(binding.root.context, "Fight is over", Toast.LENGTH_LONG).show()
+                    parentFragmentManager.popBackStack()
+                }
             }
             bHeal.setOnClickListener {
                 character.currentLife = character.totalLife

@@ -21,11 +21,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setObservers()
-        viewModel.saveUser(
-            preferences = getSharedPreferences("LoginPreferences", MODE_PRIVATE),
-            user = "test",
-            password = "1234"
-        )
 
         binding.bLogin.setOnClickListener {
             viewModel.startLogin(
@@ -45,6 +40,13 @@ class LoginActivity : AppCompatActivity() {
                     }
                     is LoginViewModel.State.Success -> {
                         binding.pbLoading.visibility = View.INVISIBLE
+
+                        viewModel.saveUser(
+                            preferences = getSharedPreferences("LoginPreferences", MODE_PRIVATE),
+                            user = binding.etUser.text.toString(),
+                            password = binding.etPassword.text.toString()
+                        )
+
                         startGameActivity()
                     }
                     is LoginViewModel.State.Error -> {

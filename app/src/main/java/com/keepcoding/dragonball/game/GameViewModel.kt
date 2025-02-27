@@ -14,8 +14,6 @@ import kotlinx.coroutines.launch
 
 class GameViewModel: ViewModel() {
 
-    private var token: String? = null
-
     sealed class State {
         data object Loading: State()
         data class Success(val characters: List<Character>): State()
