@@ -29,7 +29,15 @@ class GameViewModel: ViewModel() {
     val uiState: StateFlow<State> = _uiState.asStateFlow()
 
     fun damageCharacter(character: Character) {
-        character.currentLife -= 10
+        character.currentLife -= (10..60).random()
+    }
+
+    fun healCharacter(character: Character) {
+        if ((character.currentLife + 20) > character.totalLife) {
+            character.currentLife = character.totalLife
+        } else {
+            character.currentLife += 20
+        }
     }
 
     fun selectedCharacter(character: Character) {

@@ -53,7 +53,7 @@ class DetailFragment: Fragment() {
                 }
             }
             bHeal.setOnClickListener {
-                character.currentLife = character.totalLife
+                viewModel.healCharacter(character)
                 pbLife.progress = character.currentLife
             }
 
