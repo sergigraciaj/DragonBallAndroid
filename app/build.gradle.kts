@@ -53,6 +53,9 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
 
     testImplementation(libs.junit)
+    testImplementation("app.cash.turbine:turbine:1.0.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
